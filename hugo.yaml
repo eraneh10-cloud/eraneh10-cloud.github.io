@@ -1,0 +1,11 @@
+baseURL: "https://eraneh10-cloud.github.io/"
+languageCode: "he"
+title: "אילומיניסט"
+theme: "PaperMod"
+languages:
+  he:
+    languagedirection: rtl
+params:
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowToc: true
