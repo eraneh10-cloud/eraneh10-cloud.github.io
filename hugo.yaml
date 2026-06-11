@@ -1,11 +1,15 @@
 baseURL: "https://eraneh10-cloud.github.io/"
-languageCode: "he"
-title: "אילומיניסט"
+locale: "he"
+title: "Illuminism | אילומיניזם"
 theme: "PaperMod"
 languages:
   he:
-    languagedirection: rtl
+    direction: rtl
 params:
-  defaultTheme: auto
+  defaultTheme: dark
   ShowReadingTime: true
   ShowToc: true
+  subtitle: "ערן אבן חיים | פילוסופיה · מתמטיקה ומדע · תודעה"
+  homeInfoParams:
+    Title: "Illuminism | אילומיניזם"
+    Content: "ערן אבן חיים | פילוסופיה · מתמטיקה ומדע · תודעה"

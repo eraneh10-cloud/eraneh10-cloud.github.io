@@ -1,0 +1,138 @@
+/* ── Shared accent token ── */
+:root {
+    --gold: #D4AF37;
+    --gold-dim: #A08820;
+}
+
+/* ── Dark mode (default) ── */
+:root[data-theme="dark"] {
+    --theme: #241A3A;
+    --entry: #2E2448;
+    --primary: #EDE6D6;
+    --secondary: #B0A0C0;
+    --tertiary: #3D3060;
+    --content: #EDE6D6;
+    --code-block-bg: #1A1228;
+    --code-bg: #1F1535;
+    --border: #3D3060;
+    color-scheme: dark;
+}
+
+/* ── Light mode ── */
+:root,
+:root[data-theme="light"] {
+    --theme: #F5F2EC;
+    --entry: #FFFFFF;
+    --primary: #241A3A;
+    --secondary: #6B5C80;
+    --tertiary: #E0D8EF;
+    --content: #1A1228;
+    --code-block-bg: #EDE8E0;
+    --code-bg: #EDE8E0;
+    --border: #D8D0E0;
+    color-scheme: light;
+}
+
+/* ── Fonts ── */
+body {
+    font-family: 'Heebo', 'Arial Hebrew', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Frank Ruhl Libre', 'David Libre', serif;
+    font-weight: 500;
+}
+
+.logo a,
+.home-info h1,
+.first-entry h1,
+.page-header h1 {
+    font-family: 'Frank Ruhl Libre', 'David Libre', serif;
+}
+
+/* ── Links & accent (gold) ── */
+.entry-content a,
+.md-content a {
+    color: var(--gold);
+    text-decoration-color: color-mix(in srgb, var(--gold) 50%, transparent);
+}
+
+.entry-content a:hover,
+.md-content a:hover {
+    color: var(--gold-dim);
+    text-decoration-color: var(--gold-dim);
+}
+
+.logo a:hover {
+    color: var(--gold);
+}
+
+.menu a:hover,
+.menu .active {
+    color: var(--gold);
+    text-decoration-color: var(--gold);
+}
+
+.post-tags a,
+.terms-tags a {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.post-tags a:hover,
+.terms-tags a:hover {
+    background: var(--gold);
+    color: var(--theme);
+    border-color: var(--gold);
+}
+
+/* ── Header subtitle ── */
+.logo-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+    line-height: 1;
+}
+
+.logo-brand > a {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    column-gap: 0.55rem;
+}
+
+.logo-subtitle {
+    font-family: 'Heebo', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--secondary);
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+/* ── Home page hero ── */
+.home-info h1 {
+    font-size: 2rem;
+}
+
+.home-info .entry-content {
+    font-size: 1.05rem;
+    color: var(--secondary);
+}
+
+/* ── RTL fixes ── */
+.copy-code {
+    right: auto;
+    left: 4px;
+    inset-inline-end: 4px;
+    inset-inline-start: auto;
+}
+
+.toc ul {
+    padding-inline-start: 1rem;
+    padding-inline-end: 0;
+    padding-right: 0;
+}
