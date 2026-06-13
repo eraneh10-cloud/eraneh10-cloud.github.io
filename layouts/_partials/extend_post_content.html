@@ -1,0 +1,14 @@
+{{- /* כפתור דיון בפייסבוק (גלוי לכולם) — רק אם הוגדר fbpost ב-front matter */ -}}
+{{- with .Params.fbpost }}
+<p class="ill-fb-discuss">
+  <a href="{{ . }}" target="_blank" rel="noopener noreferrer">💬 הצטרפו לדיון בפייסבוק</a>
+</p>
+{{- end }}
+
+{{- /* קישור עריכת אדמין בתחתית גוף הפוסט (מוצג רק במצב אדמין דרך CSS) */ -}}
+{{- with .File }}
+{{- $editBase := "https://github.com/eraneh10-cloud/eraneh10-cloud.github.io/edit/main/content" }}
+<p class="ill-edit-single">
+  <a class="ill-edit" href="{{ printf "%s/%s" $editBase (path.Join .Path) }}" target="_blank" rel="noopener noreferrer">✏️ ערוך פוסט זה</a>
+</p>
+{{- end }}

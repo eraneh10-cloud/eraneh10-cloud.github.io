@@ -1,0 +1,107 @@
+{{- define "main" }}
+
+{{/* ── מסטהד (עמוד הבית בלבד) ── */}}
+{{- with site.Params.masthead }}
+<section class="ill-masthead">
+  {{/* placeholder לתמונת שער — ערן ימלא בהמשך */}}
+  <div class="ill-masthead-cover" aria-hidden="true"></div>
+  <h1 class="ill-masthead-title">{{ .title }}</h1>
+  {{- with .subtitle }}
+  <p class="ill-masthead-subtitle">{{ . }}</p>
+  {{- end }}
+</section>
+{{- end }}
+
+{{/* רשימת הפוסטים בסדר קריאה (לפי weight, נמוך→ראשון) */}}
+{{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $posts = sort $posts "Weight" "asc" }}
+{{- $editBase := "https://github.com/eraneh10-cloud/eraneh10-cloud.github.io/edit/main/content" }}
+
+<div class="ill-home">
+
+  {{/* כפתור פתיחת ניווט — מובייל בלבד */}}
+  <button class="ill-nav-toggle" aria-expanded="false" aria-controls="ill-nav">☰ תוכן</button>
+
+  {{/* ── סרגל ניווט (ב-RTL נוחת מימין) ── */}}
+  <aside class="ill-nav" id="ill-nav">
+    <h2 class="ill-nav-title">{{ site.Params.navTitle | default "קרא לפי הסדר" }}</h2>
+    <ol class="ill-nav-list">
+      {{- range $i, $p := $posts }}
+      <li class="ill-nav-item{{ if eq $p.Permalink $.Permalink }} active{{ end }}">
+        <a href="{{ $p.Permalink }}">
+          <span class="ill-nav-num">{{ printf "%02d" (add $i 1) }}</span>
+          <span class="ill-nav-text">{{ $p.Title }}</span>
+        </a>
+      </li>
+      {{- end }}
+    </ol>
+  </aside>
+
+  {{/* ── עמודת הפוסטים (אמצע) ── */}}
+  <main class="ill-posts">
+    {{- range $i, $p := $posts }}
+    {{- $isPinned := eq $p.Weight 1 }}
+    <article class="post-entry ill-card{{ if $isPinned }} ill-pinned{{ end }}">
+      {{- $isHidden := ($p.Param "cover.hiddenInList") | default ($p.Param "cover.hidden") | default false }}
+      {{- partial "cover.html" (dict "cxt" $p "IsSingle" false "isHidden" $isHidden) }}
+      <header class="entry-header">
+        {{- if $isPinned }}<span class="ill-pin-tag">נעוץ · התחילו כאן</span>{{ end }}
+        <h2 class="entry-hint-parent">{{ $p.Title }}</h2>
+      </header>
+      {{- if (ne ($p.Param "hideSummary") true) }}
+      <div class="entry-content">
+        <p>{{ $p.Summary | plainify | htmlUnescape }}{{ if $p.Truncated }}...{{ end }}</p>
+      </div>
+      {{- end }}
+      {{- if not ($p.Param "hideMeta") }}
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" $p -}}
+        {{- with $p.File }}
+        &nbsp;|&nbsp;<a class="ill-edit" href="{{ printf "%s/%s" $editBase (path.Join .Path) }}" target="_blank" rel="noopener noreferrer">✏️ ערוך</a>
+        {{- end }}
+      </footer>
+      {{- end }}
+      <a class="entry-link" aria-label="קישור לפוסט {{ $p.Title | plainify }}" href="{{ $p.Permalink }}"></a>
+    </article>
+    {{- end }}
+  </main>
+
+  {{/* ── סרגל ווידג'טים (ב-RTL נוחת משמאל) ── */}}
+  <aside class="ill-widgets">
+
+    {{/* תיבת אודות */}}
+    {{- with site.Params.sidebarAbout }}
+    <section class="ill-widget ill-widget-about">
+      <h2 class="ill-widget-title">{{ .title }}</h2>
+      <p>{{ .text }}</p>
+      <a class="ill-widget-more" href="{{ "about/" | absLangURL }}">{{ .moreText }}</a>
+    </section>
+    {{- end }}
+
+    {{/* תיבת ציטוט */}}
+    {{- with site.Params.sidebarQuote }}
+    <section class="ill-widget ill-widget-quote">
+      <blockquote>
+        {{- with .latin }}<span class="ill-quote-lat" dir="ltr">{{ . }}</span> — {{ end }}{{ .text }}
+        {{- with .author }}<cite>{{ . }}</cite>{{ end }}
+      </blockquote>
+    </section>
+    {{- end }}
+
+    {{/* תיבת סרטונים / ערוצים */}}
+    {{- with site.Params.channels }}
+    <section class="ill-widget ill-widget-channels">
+      <h2 class="ill-widget-title">{{ site.Params.channelsTitle | default "סרטונים" }}</h2>
+      <ul class="ill-channels">
+        {{- range . }}
+        <li><a href="{{ .url }}"{{ if findRE "://" .url }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a></li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+
+  </aside>
+
+</div>
+
+{{- end }}{{/* end main */}}

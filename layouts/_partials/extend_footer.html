@@ -1,0 +1,35 @@
+{{- /* סרגל אדמין בפוטר — מוצג רק במצב אדמין (html.ill-admin דרך CSS) */ -}}
+<div class="ill-admin-bar">
+  <a class="ill-edit" href="https://github.com/eraneh10-cloud/eraneh10-cloud.github.io/edit/main/hugo.yaml" target="_blank" rel="noopener noreferrer">✏️ הגדרות אתר</a>
+  <a class="ill-edit ill-advanced" href="https://github.com/eraneh10-cloud/eraneh10-cloud.github.io/edit/main/assets/css/extended/custom.css" target="_blank" rel="noopener noreferrer">🎨 עיצוב (CSS) · מתקדם</a>
+</div>
+
+{{- /* מצב אדמין + מגירת ניווט במובייל */ -}}
+<script>
+(function () {
+  // ── מצב אדמין: ?admin=1 מדליק, ?admin=0 מכבה, נשמר ב-localStorage ──
+  try {
+    var params = new URLSearchParams(window.location.search);
+    if (params.has('admin')) {
+      if (params.get('admin') === '0') {
+        localStorage.removeItem('illAdmin');
+      } else {
+        localStorage.setItem('illAdmin', '1');
+      }
+    }
+    if (localStorage.getItem('illAdmin') === '1') {
+      document.documentElement.classList.add('ill-admin');
+    }
+  } catch (e) { /* localStorage חסום — מתעלמים */ }
+
+  // ── מגירת ניווט במובייל ──
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.ill-nav-toggle');
+    if (!btn) return;
+    var nav = document.getElementById('ill-nav');
+    if (!nav) return;
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>

@@ -136,3 +136,351 @@ h1, h2, h3, h4, h5, h6 {
     padding-inline-end: 0;
     padding-right: 0;
 }
+
+/* ════════════════════════════════════════════════════
+   עמוד הבית — מסטהד + פריסת שלוש עמודות
+   ════════════════════════════════════════════════════ */
+
+/* ── מסטהד ── */
+.ill-masthead {
+    max-width: 1280px;
+    margin: 1.5rem auto 0.5rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.ill-masthead-cover {
+    /* placeholder לתמונת שער — ערן ימלא בהמשך */
+    height: 120px;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    background: color-mix(in srgb, var(--theme) 80%, #000 20%);
+    border: 1px solid var(--border);
+}
+
+.ill-masthead-title {
+    font-family: 'Frank Ruhl Libre', 'David Libre', serif;
+    color: var(--gold);
+    font-size: clamp(28px, 6vw, 48px);
+    text-align: center;
+    margin: 0;
+    line-height: 1.15;
+    transition: color .25s ease;
+}
+
+.ill-masthead-title:hover {
+    color: #fff;
+}
+
+.ill-masthead-subtitle {
+    font-family: 'Heebo', sans-serif;
+    color: var(--secondary);
+    font-size: clamp(14px, 2.2vw, 18px);
+    margin: 0.5rem 0 0;
+}
+
+/* עמוד הבית צריך להשתחרר מהגבלת הרוחב של PaperMod (--main-width: 720px).
+   המסטהד וה-ill-home מגבילים את עצמם ל-1280 וממורכזים. */
+.main:has(.ill-home) {
+    max-width: none;
+    padding-inline: 0;
+}
+
+/* ── רשת שלוש העמודות ── */
+.ill-home {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+@media (min-width: 1100px) {
+    /* DOM: toggle(מוסתר) → ניווט → פוסטים → ווידג'טים.
+       ב-RTL העמודה הראשונה נוחתת מימין. */
+    .ill-home {
+        grid-template-columns: 220px minmax(0, 1fr) 250px;
+        align-items: start;
+    }
+}
+
+/* ── סרגל ניווט ── */
+.ill-nav-title,
+.ill-widget-title {
+    font-family: 'Frank Ruhl Libre', 'David Libre', serif;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.ill-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ill-nav-item {
+    margin: 0;
+}
+
+.ill-nav-item a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.45rem 0.5rem;
+    border-radius: 6px;
+    color: var(--primary);
+    text-decoration: none;
+    border-inline-start: 2px solid transparent;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.ill-nav-item a:hover {
+    background: var(--entry);
+    border-inline-start-color: var(--gold);
+}
+
+.ill-nav-item.active a {
+    background: var(--entry);
+    border-inline-start-color: var(--gold);
+}
+
+.ill-nav-num {
+    font-family: 'Heebo', sans-serif;
+    font-variant-numeric: tabular-nums;
+    color: var(--gold);
+    font-size: 0.85rem;
+    flex: 0 0 auto;
+}
+
+.ill-nav-text {
+    font-size: 0.95rem;
+    line-height: 1.35;
+}
+
+/* ── כרטיסי פוסט במרכז ── */
+.ill-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.ill-card {
+    position: relative;
+}
+
+.ill-pin-tag {
+    display: inline-block;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.72rem;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    padding: 0.1rem 0.6rem;
+    margin-bottom: 0.4rem;
+}
+
+/* ── סרגל ווידג'טים ── */
+.ill-widgets {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+}
+
+.ill-widget {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.ill-widget p {
+    margin: 0 0 0.6rem;
+    color: var(--primary);
+}
+
+.ill-widget-more {
+    color: var(--gold);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.ill-widget-more:hover {
+    color: #fff;
+}
+
+.ill-widget-quote blockquote {
+    margin: 0;
+    border: 0;
+    padding-inline-start: 0.8rem;
+    border-inline-start: 2px solid var(--gold);
+    font-family: 'Frank Ruhl Libre', 'David Libre', serif;
+    font-size: 1.05rem;
+}
+
+.ill-widget-quote .ill-quote-lat {
+    color: var(--gold);
+}
+
+.ill-widget-quote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    color: var(--secondary);
+}
+
+.ill-channels {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.ill-channels a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.ill-channels a:hover {
+    color: #fff;
+}
+
+/* ── כפתור פתיחת ניווט (מובייל) ── */
+.ill-nav-toggle {
+    display: none;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1rem;
+    color: var(--primary);
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+}
+
+/* ════════════════════════════════════════════════════
+   קישורי עריכה — מוצגים רק במצב אדמין (html.ill-admin)
+   ════════════════════════════════════════════════════ */
+.ill-edit,
+.ill-edit-single {
+    display: none;
+}
+
+.ill-card .ill-edit,
+.post-single .ill-edit {
+    /* מעל שכבת ה-entry-link כדי שתהיה לחיצה */
+    position: relative;
+    z-index: 2;
+}
+
+html.ill-admin .ill-edit {
+    display: inline;
+}
+
+html.ill-admin .ill-edit-single {
+    display: block;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+}
+
+.ill-edit {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.ill-edit:hover {
+    color: #fff;
+}
+
+/* סרגל אדמין בפוטר — מוסתר לקוראים, גלוי במצב אדמין */
+.ill-admin-bar {
+    display: none;
+}
+
+html.ill-admin .ill-admin-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    padding: 0.85rem 1rem;
+    margin-top: 0.5rem;
+    border-top: 1px dashed var(--border);
+    font-size: 0.9rem;
+}
+
+html.ill-admin .ill-admin-bar .ill-edit {
+    display: inline;
+}
+
+.ill-advanced {
+    opacity: 0.75;
+}
+
+/* ── כפתור דיון בפייסבוק (גלוי לכולם, בתחתית הפוסט) ── */
+.ill-fb-discuss {
+    margin: 1.75rem 0 0;
+}
+
+.ill-fb-discuss a {
+    display: inline-block;
+    padding: 0.5rem 1.15rem;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    color: var(--gold);
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+}
+
+.ill-fb-discuss a:hover {
+    background: var(--gold);
+    color: var(--theme);
+}
+
+/* ════════════════════════════════════════════════════
+   רספונסיביות — מתחת ל-768px: עמודה אחת + מגירת ניווט
+   ════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .ill-home {
+        grid-template-columns: 1fr;
+    }
+
+    /* כפתור ☰ גלוי; הניווט מקופל עד שנפתח */
+    .ill-nav-toggle {
+        display: block;
+    }
+
+    .ill-nav {
+        display: none;
+        background: var(--entry);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .ill-nav.open {
+        display: block;
+    }
+
+    /* תת-כותרת ההדר ב-nowrap מרחיבה את העמוד וגורמת לגלישה אופקית במובייל */
+    .logo-subtitle {
+        white-space: normal;
+    }
+
+    /* כותרת המסטהד לא תחרוג מרוחב המסך */
+    .ill-masthead-title {
+        overflow-wrap: anywhere;
+    }
+
+    /* הווידג'טים יורדים מתחת לפוסטים (סדר DOM כבר נכון) */
+}
