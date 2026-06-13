@@ -484,3 +484,19 @@ html.ill-admin .ill-admin-bar .ill-edit {
 
     /* הווידג'טים יורדים מתחת לפוסטים (סדר DOM כבר נכון) */
 }
+
+/* ── ניווט הקודם/הבא ברצף הקריאה (לפי weight) — override ל-paginav ── */
+.post-seq-nav{display:flex;flex-direction:row-reverse;justify-content:space-between;gap:1rem;margin-top:3rem;
+  padding-top:1.5rem;border-top:1px solid rgba(212,175,55,.25)}
+.post-seq-nav__cell{flex:1}
+/* ב-RTL flex התא הראשון ב-DOM יושב מימין; row-reverse + יישור הפוך
+   מציבים את "הבא" משמאל ואת "הקודם" מימין, בהתאם לחצים ←/→. */
+.post-seq-nav__cell--next{text-align:left}
+.post-seq-nav__cell--prev{text-align:right}
+.post-seq-nav__link{display:inline-flex;flex-direction:column;gap:.25rem;
+  text-decoration:none;color:inherit}
+.post-seq-nav__dir{color:#D4AF37;font-size:.85rem;letter-spacing:.02em}
+.post-seq-nav__title{font-weight:600;line-height:1.3}
+.post-seq-nav__link:hover .post-seq-nav__title{color:#D4AF37}
+@media(max-width:768px){.post-seq-nav{flex-direction:column;gap:1.25rem}
+  .post-seq-nav__cell--next,.post-seq-nav__cell--prev{text-align:right}}
