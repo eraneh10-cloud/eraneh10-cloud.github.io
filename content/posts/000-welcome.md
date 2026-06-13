@@ -1,5 +1,5 @@
 ---
-title: "למה יש קיום?"
+title: "הקדמה"
 date: 2026-06-13
 draft: false
 weight: 1
