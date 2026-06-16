@@ -160,6 +160,59 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--border);
 }
 
+/* ── כפתור CTA "התחל לקרוא" ── */
+.ill-cta-wrap {
+    max-width: 1280px;
+    margin: 0 auto 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.ill-cta {
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+    background: var(--gold);
+    color: #241A3A;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.ill-cta:hover {
+    background: #241A3A;
+    color: var(--gold);
+    transform: translateY(-1px);
+}
+
+/* ── דף 404 ── */
+.ill-404 {
+    max-width: 720px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.ill-404-text {
+    font-family: 'Frank Ruhl Libre', 'David Libre', serif;
+    font-size: clamp(20px, 4vw, 30px);
+    line-height: 1.7;
+    color: var(--primary);
+}
+
+.ill-404-text a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+}
+
+.ill-404-text a:hover {
+    color: #fff;
+}
+
 .ill-masthead-title {
     font-family: 'Frank Ruhl Libre', 'David Libre', serif;
     color: var(--gold);

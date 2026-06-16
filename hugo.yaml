@@ -5,6 +5,7 @@ theme: "PaperMod"
 languages:
   he:
     direction: rtl
+    languageName: "עברית"
 markup:
   goldmark:
     renderer:
@@ -14,6 +15,7 @@ markup:
 params:
   defaultTheme: dark
   images: ["images/cover.png"]
+  description: "מתמטיקה אונטולוגית בעברית — פילוסופיה, מדע ותודעה"
   ShowReadingTime: true
   ShowToc: true
   ShowPostNavLinks: true
@@ -94,3 +96,16 @@ params:
 
   # כותרת סרגל הניווט
   navTitle: "קרא לפי הסדר"
+
+# תפריט עליון
+menu:
+  main:
+    - name: תגיות
+      url: /tags/
+      weight: 30
+
+# Google Analytics — ערן יפתח חשבון ב-analytics.google.com ויחליף את ה-ID.
+# הסר את ההערה והכנס את ה-Measurement ID (מתחיל ב-G-) כדי להפעיל.
+# services:
+#   googleAnalytics:
+#     id: "G-XXXXXXXXXX"

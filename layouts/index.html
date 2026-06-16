@@ -12,6 +12,11 @@
 </section>
 {{- end }}
 
+{{/* כפתור CTA — מתחת לקאבר, מעל רשימת הפוסטים */}}
+<div class="ill-cta-wrap">
+  <a class="ill-cta" href="{{ "posts/000-welcome/" | relLangURL }}">→ התחל לקרוא לפי הסדר</a>
+</div>
+
 {{/* רשימת הפוסטים בסדר קריאה (לפי weight, נמוך→ראשון) */}}
 {{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $posts = sort $posts "Weight" "asc" }}
