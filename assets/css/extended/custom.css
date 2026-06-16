@@ -150,11 +150,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ill-masthead-cover {
-    /* תמונת שער — static/images/cover.png */
-    height: 120px;
+    /* תמונת שער — static/images/cover.png (לנדסקייפ ~16:9) */
+    width: 100%;
+    aspect-ratio: 16 / 9;     /* גובה עוקב אחרי הרוחב לפי פרופורציית התמונה */
+    max-height: 400px;        /* תקרה כדי שלא יתפח במסכים רחבים */
     border-radius: 8px;
     margin-bottom: 1.2rem;
-    background: url('/images/cover.png') center / cover no-repeat;
+    /* contain — כל התמונה גלויה; רקע כהה ממלא את מה שנותר */
+    background: #241A3A url('/images/cover.png') center / contain no-repeat;
     border: 1px solid var(--border);
 }
 
