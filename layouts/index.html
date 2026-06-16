@@ -78,13 +78,25 @@
     </section>
     {{- end }}
 
-    {{/* תיבת ציטוט */}}
-    {{- with site.Params.sidebarQuote }}
+    {{/* תיבת ציטוט — פרומפטר: כל הציטוטים גוללים אנכית ברצף */}}
+    {{- $quotes := slice }}
+    {{- with site.Params.sidebarQuote }}{{ $quotes = $quotes | append . }}{{ end }}
+    {{- with site.Params.sidebarQuotes }}{{ $quotes = $quotes | append . }}{{ end }}
+    {{- with $quotes }}
     <section class="ill-widget ill-widget-quote">
-      <blockquote>
-        {{- with .latin }}<span class="ill-quote-lat" dir="ltr">{{ . }}</span> — {{ end }}{{ .text }}
-        {{- with .author }}<cite>{{ . }}</cite>{{ end }}
-      </blockquote>
+      <div class="ill-quote-viewport">
+        {{/* הסט מרונדר פעמיים כדי שהאנימציה תתלפף בלי קפיצה */}}
+        <ul class="ill-quote-track" aria-label="ציטוטים נבחרים">
+          {{- range $pass := (seq 2) }}
+          {{- range $quotes }}
+          <li><blockquote{{ if eq $pass 2 }} aria-hidden="true"{{ end }}>
+            {{- with .latin }}<span class="ill-quote-lat" dir="ltr">{{ . }}</span> — {{ end }}{{ .text }}
+            {{- with .author }}<cite>{{ . }}</cite>{{ end }}
+          </blockquote></li>
+          {{- end }}
+          {{- end }}
+        </ul>
+      </div>
     </section>
     {{- end }}
 

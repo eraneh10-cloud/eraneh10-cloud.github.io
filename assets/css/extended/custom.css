@@ -150,11 +150,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ill-masthead-cover {
-    /* placeholder לתמונת שער — ערן ימלא בהמשך */
+    /* תמונת שער — static/images/cover.png */
     height: 120px;
     border-radius: 8px;
     margin-bottom: 1.2rem;
-    background: color-mix(in srgb, var(--theme) 80%, #000 20%);
+    background: url('/images/cover.png') center / cover no-repeat;
     border: 1px solid var(--border);
 }
 
@@ -335,6 +335,49 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.8rem;
     font-style: normal;
     color: var(--secondary);
+}
+
+/* ── פרומפטר ציטוטים — גלילה אנכית רציפה, אותו עיצוב בלוקקווט ── */
+.ill-quote-viewport {
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+    /* דעיכה עדינה בקצוות לפי האסתטיקה המינימלית */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+}
+
+.ill-quote-track {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    animation: ill-prompter 75s linear infinite;
+    will-change: transform;
+}
+
+/* עצירה בריחוף כדי לאפשר קריאה */
+.ill-quote-viewport:hover .ill-quote-track {
+    animation-play-state: paused;
+}
+
+.ill-quote-track li {
+    margin: 0;
+}
+
+@keyframes ill-prompter {
+    from { transform: translateY(0); }
+    /* הסט מוכפל, ולכן 50%- מחזיר בדיוק לתחילת הלולאה ללא קפיצה */
+    to   { transform: translateY(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ill-quote-track { animation: none; }
+    /* ללא תנועה — מציגים רק את הסט הראשון, ניתן לגלילה ידנית */
+    .ill-quote-viewport { height: auto; overflow: visible; -webkit-mask-image: none; mask-image: none; }
+    .ill-quote-track li:has(blockquote[aria-hidden]) { display: none; }
 }
 
 .ill-channels {
