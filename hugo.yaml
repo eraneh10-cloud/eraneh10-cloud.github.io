@@ -97,6 +97,10 @@ params:
   # כותרת סרגל הניווט
   navTitle: "קרא לפי הסדר"
 
+  # פוטר — טקסט יצירת קשר (מוצג בתחתית כל עמוד)
+  footer:
+    text: "יצירת קשר: [illuminism10@gmail.com](mailto:illuminism10@gmail.com)"
+
 # תפריט עליון
 menu:
   main:
