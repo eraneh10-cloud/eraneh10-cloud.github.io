@@ -1,0 +1,10 @@
+{{- /* דיסקליימר תרגום — מוצג רק בדפי השפה האנגלית (/en/). ריק לחלוטין בעברית. */ -}}
+{{- if eq .Lang "en" }}
+{{- $heHref := "/" -}}
+{{- range .AllTranslations -}}{{- if eq .Lang "he" -}}{{- $heHref = .RelPermalink -}}{{- end -}}{{- end -}}
+<div class="ill-translate-disclaimer" dir="ltr" style="background:#f5f5f5; padding:8px 16px; font-size:0.85em; text-align:center; color:#666;">
+  This content was AI-translated from Hebrew. The original Hebrew version
+  is the authoritative source.
+  <a href="{{ $heHref }}">Read in Hebrew</a>
+</div>
+{{- end }}

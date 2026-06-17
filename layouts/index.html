@@ -1,10 +1,11 @@
 {{- define "main" }}
 
-{{/* ── מסטהד (עמוד הבית בלבד) ── */}}
+{{/* ── באנר קאבר מלא-רוחב (עמוד הבית בלבד) ── */}}
+<section class="ill-cover-banner" role="img" aria-label="{{ with site.Params.masthead }}{{ .title }}{{ else }}{{ site.Title }}{{ end }}"></section>
+
+{{/* ── מסטהד — כותרת + תת-כותרת מתחת לבאנר ── */}}
 {{- with site.Params.masthead }}
 <section class="ill-masthead">
-  {{/* placeholder לתמונת שער — ערן ימלא בהמשך */}}
-  <div class="ill-masthead-cover" aria-hidden="true"></div>
   <h1 class="ill-masthead-title">{{ .title }}</h1>
   {{- with .subtitle }}
   <p class="ill-masthead-subtitle">{{ . }}</p>

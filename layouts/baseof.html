@@ -23,6 +23,7 @@
 {{- end }}
     {{ partialCached "header.html" . .Page -}}
     <main class="main">
+        {{- partial "disclaimer.html" . }}
         {{- block "main" . }}{{ end }}
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}

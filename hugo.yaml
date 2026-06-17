@@ -1,11 +1,31 @@
 baseURL: "https://illuminism.net/"
-locale: "he"
 title: "Illuminism | אילומיניזם"
 theme: "PaperMod"
+
+# ─── רב-לשוני: עברית (ברירת מחדל, /) + אנגלית (/en/) ───
+defaultContentLanguage: he
+defaultContentLanguageInSubdir: false
+
 languages:
   he:
-    direction: rtl
     languageName: "עברית"
+    languageCode: "he"
+    languagedirection: rtl
+    contentDir: content          # תוכן עברי נשאר ב-content/ (ללא שינוי)
+    weight: 1
+    title: "אילומיניזם"
+    params:
+      description: "מתמטיקה אונטולוגית בעברית"
+  en:
+    languageName: "English"
+    languageCode: "en"
+    languagedirection: ltr
+    contentDir: content/en       # תוכן אנגלי עתידי ב-content/en/
+    weight: 2
+    title: "Illuminism"
+    params:
+      description: "Ontological mathematics — AI-translated edition"
+
 markup:
   goldmark:
     renderer:
@@ -14,6 +34,7 @@ markup:
       unsafe: true
 params:
   defaultTheme: dark
+  displayFullLangName: true   # מתג השפה מציג "עברית"/"English" במקום קוד
   images: ["images/cover.png"]
   description: "מתמטיקה אונטולוגית בעברית — פילוסופיה, מדע ותודעה"
   ShowReadingTime: true
