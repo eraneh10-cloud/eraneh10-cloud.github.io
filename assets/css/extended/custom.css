@@ -156,12 +156,12 @@ h1, h2, h3, h4, h5, h6 {
     width: 100vw;
     margin-inline: calc(50% - 50vw);
     margin-block: 0 0;
-    height: clamp(320px, 30vw, 420px);
-    /* contain: כל התמונה גלויה — הלוגו הגאומטרי + הכיתוב המלא
-       "ILLUMINISM · RATIONAL PHILOSOPHY". התמונה צרה מהבאנר, והרקע הכהה
-       התואם (#241A3A) ממלא את הצדדים ונטמע כמעט בלי תפר.
-       (cover חתך את הכיתוב התחתון; contain מציג את התמונה השלמה.) */
-    background: #241A3A url('/images/cover.png') center center / contain no-repeat;
+    height: 420px;
+    /* cover: התמונה ממלאת את כל רוחב הדף מקצה לקצה, ללא שוליים סגולים בצדדים.
+       מיקום אנכי center 35% — מאזן בין הלוגו למעלה לכיתוב התחתון.
+       (object-fit/object-position לא חלים על background; המקבילה היא
+        background-size/background-position.) */
+    background: #241A3A url('/images/cover.png') center 35% / cover no-repeat;
     border-block-end: 1px solid var(--border);
 }
 
