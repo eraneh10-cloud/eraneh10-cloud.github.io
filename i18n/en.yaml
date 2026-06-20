@@ -1,0 +1,12 @@
+# מחרוזות ממשק מותאמות (override/השלמה ל-i18n של PaperMod) — אנגלית
+pinTag: "Pinned · Start here"
+ctaReadInOrder: "Start reading in order →"
+navToggle: "☰ Contents"
+ariaPostLink: "Link to post"
+ariaQuotes: "Selected quotes"
+ariaSeqNav: "Reading-order navigation"
+seqNext: "Next in series →"
+seqPrev: "← Previous in series"
+err404Before: "This page doesn't exist – but the questions remain. Back to the "
+err404Home: "home page"
+err404After: "."

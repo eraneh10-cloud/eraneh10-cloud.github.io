@@ -12,15 +12,15 @@
 {{- $prev := false -}}{{- $next := false -}}
 {{- if gt $idx 0 -}}{{- $prev = index $pages (sub $idx 1) -}}{{- end -}}
 {{- if lt $idx (sub $size 1) -}}{{- $next = index $pages (add $idx 1) -}}{{- end -}}
-<nav class="post-seq-nav" aria-label="ניווט ברצף הקריאה">
+<nav class="post-seq-nav" aria-label="{{ i18n "ariaSeqNav" }}">
   <div class="post-seq-nav__cell post-seq-nav__cell--next">
     {{- if $next -}}<a class="post-seq-nav__link" href="{{ $next.Permalink }}">
-      <span class="post-seq-nav__dir">הבא ברצף ←</span>
+      <span class="post-seq-nav__dir">{{ i18n "seqNext" }}</span>
       <span class="post-seq-nav__title">{{ $next.Title }}</span></a>{{- end -}}
   </div>
   <div class="post-seq-nav__cell post-seq-nav__cell--prev">
     {{- if $prev -}}<a class="post-seq-nav__link" href="{{ $prev.Permalink }}">
-      <span class="post-seq-nav__dir">→ הקודם ברצף</span>
+      <span class="post-seq-nav__dir">{{ i18n "seqPrev" }}</span>
       <span class="post-seq-nav__title">{{ $prev.Title }}</span></a>{{- end -}}
   </div>
 </nav>

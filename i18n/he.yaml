@@ -1,0 +1,12 @@
+# מחרוזות ממשק מותאמות (override/השלמה ל-i18n של PaperMod) — עברית
+pinTag: "נעוץ · התחילו כאן"
+ctaReadInOrder: "→ התחל לקרוא לפי הסדר"
+navToggle: "☰ תוכן"
+ariaPostLink: "קישור לפוסט"
+ariaQuotes: "ציטוטים נבחרים"
+ariaSeqNav: "ניווט ברצף הקריאה"
+seqNext: "הבא ברצף ←"
+seqPrev: "→ הקודם ברצף"
+err404Before: "הדף הזה לא קיים – אבל השאלות כן. חזרה ל"
+err404Home: "דף הבית"
+err404After: "."

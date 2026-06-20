@@ -8,23 +8,35 @@ defaultContentLanguageInSubdir: false
 
 languages:
   he:
-    languageName: "עברית"
-    languageCode: "he"
-    languagedirection: rtl
+    label: "עברית"
+    locale: "he"
+    direction: rtl
     contentDir: content          # תוכן עברי נשאר ב-content/ (ללא שינוי)
     weight: 1
     title: "אילומיניזם"
     params:
       description: "מתמטיקה אונטולוגית בעברית"
   en:
-    languageName: "English"
-    languageCode: "en"
-    languagedirection: ltr
+    label: "English"
+    locale: "en"
+    direction: ltr
     contentDir: content/en       # תוכן אנגלי עתידי ב-content/en/
     weight: 2
     title: "Illuminism"
+    menu:
+      main:
+        - name: "Tags"
+          url: /en/tags/
+          weight: 30
     params:
       description: "Ontological mathematics — AI-translated edition"
+      # שם המחבר באנגלית (חל על כל הפוסטים האנגליים — אחרת מוצג "ערן אבן־חיים")
+      author: "Eran Even-Haim"
+      # ─── בייליין אנגלי (override; אחרת ה-header מציג את הטקסט העברי גם ב-/en/) ───
+      subtitle: "Eran Even-Haim · Philosophy · Mathematics · Science · Consciousness"
+      masthead:
+        title: "Illuminism"
+        subtitle: "Eran Even-Haim · Philosophy · Mathematics · Science · Consciousness"
       # ─── תרגום ווידג'טי הסרגל לאנגלית (override של ה-params הגלובליים העבריים) ───
       sidebarAbout:
         title: "About"
@@ -35,13 +47,13 @@ languages:
         text: "Dare to know"
         author: "– Immanuel Kant"
       sidebarQuotes:
-        - text: "A thought, even a mere possibility, can shatter us and transform us."
+        - text: "A thought, even a possibility, can shatter and transform us."
           author: "– Friedrich Nietzsche"
         - text: "What I understand by a 'philosopher': a terrible explosive in whose presence everything is in danger."
           author: "– Nietzsche"
-        - text: "I find in these thoughts many things that alarm me, and which almost all men, if I am not mistaken, would find shocking – so much so that I do not see what use such a writing could serve, since it seems the whole world would reject it."
-          author: "– Arnauld, a Catholic Jansenist, responding to a letter from Leibniz"
-        - text: "Mathematics is a language – the language of nature."
+        - text: "I find in these thoughts so many things which alarm me, and which almost all men, if I am not mistaken, will find so shocking, that I do not see of what use a writing can be, which apparently all the world will reject."
+          author: "– Antoine Arnauld (responding to Leibniz, 1686)"
+        - text: "Mathematics is, astonishingly, the language of nature itself."
           author: "– Paul Davies"
         - text: "Mathematics is the territory, not the map. Or: mathematics is the territory and the map alike."
           author: "– Eran Even-Haim"
@@ -51,13 +63,13 @@ languages:
           author: "– Weinberg's Corollary (Arthur Bloch)"
         - text: "Physical laws should have mathematical beauty."
           author: "– Paul Dirac"
-        - text: "Whatever the truth about the universe turns out to be, it is bound to be astonishing."
+        - text: "Mathematics, rightly viewed, possesses not only truth, but supreme beauty – a beauty cold and austere, like that of sculpture."
           author: "– Bertrand Russell"
-        - text: "The connection between mathematics and reality is a miracle – but it works."
+        - text: "The correspondence between mathematics and the physical world is so precise, so unexpected, and yet so productive that it can feel almost magical."
           author: "– Prof. Frank Wilczek"
-        - text: "It is utterly unreasonable how well mathematics works. Why should the world behave according to mathematical laws?"
+        - text: "It's actually unreasonable how well mathematics works. Why should the world behave according to mathematical laws?"
           author: "– Prof. Anton Zeilinger"
-        - text: "It is not merely that the deeper you probe into reality the easier it becomes to describe it with mathematics – mathematics becomes the only way to describe reality."
+        - text: "It's not only that it becomes easier to describe with mathematics, as you go deeper and deeper into reality; mathematics becomes the only way to describe reality."
           author: "– Prof. Leonard Susskind"
         - text: "I teach you the overman. Man is something that shall be overcome… It is now the great noon, when man stands midway on his path between beast and overman."
           author: "– Nietzsche"
@@ -101,12 +113,12 @@ params:
   author: "ערן אבן־חיים"
 
   # תת-כותרת ההדר (ליד הלוגו למעלה)
-  subtitle: "ערן אבן חיים | פילוסופיה · מתמטיקה ומדע · תודעה"
+  subtitle: "ערן אבן־חיים · פילוסופיה · מתמטיקה · מדע · תודעה"
 
   # מסטהד עמוד הבית
   masthead:
     title: "Illuminism · אילומיניזם"
-    subtitle: "ערן אבן־חיים · פילוסופיה · מתמטיקה ומדע · תודעה"
+    subtitle: "ערן אבן־חיים · פילוסופיה · מתמטיקה · מדע · תודעה"
 
   # סרגל הווידג'טים — תיבת אודות
   sidebarAbout:

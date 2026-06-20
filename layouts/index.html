@@ -14,7 +14,7 @@
 
 {{/* כפתור CTA — מתחת לקאבר, מעל רשימת הפוסטים */}}
 <div class="ill-cta-wrap">
-  <a class="ill-cta" href="{{ "posts/000-welcome/" | relLangURL }}">→ התחל לקרוא לפי הסדר</a>
+  <a class="ill-cta" href="{{ "posts/000-welcome/" | relLangURL }}">{{ i18n "ctaReadInOrder" }}</a>
 </div>
 
 {{/* רשימת הפוסטים בסדר קריאה (לפי weight, נמוך→ראשון) */}}
@@ -25,7 +25,7 @@
 <div class="ill-home">
 
   {{/* כפתור פתיחת ניווט — מובייל בלבד */}}
-  <button class="ill-nav-toggle" aria-expanded="false" aria-controls="ill-nav">☰ תוכן</button>
+  <button class="ill-nav-toggle" aria-expanded="false" aria-controls="ill-nav">{{ i18n "navToggle" }}</button>
 
   {{/* ── סרגל ניווט (ב-RTL נוחת מימין) ── */}}
   <aside class="ill-nav" id="ill-nav">
@@ -50,7 +50,7 @@
       {{- $isHidden := ($p.Param "cover.hiddenInList") | default ($p.Param "cover.hidden") | default false }}
       {{- partial "cover.html" (dict "cxt" $p "IsSingle" false "isHidden" $isHidden) }}
       <header class="entry-header">
-        {{- if $isPinned }}<span class="ill-pin-tag">נעוץ · התחילו כאן</span>{{ end }}
+        {{- if $isPinned }}<span class="ill-pin-tag">{{ i18n "pinTag" }}</span>{{ end }}
         <h2 class="entry-hint-parent">{{ $p.Title }}</h2>
       </header>
       {{- if (ne ($p.Param "hideSummary") true) }}
@@ -66,7 +66,7 @@
         {{- end }}
       </footer>
       {{- end }}
-      <a class="entry-link" aria-label="קישור לפוסט {{ $p.Title | plainify }}" href="{{ $p.Permalink }}"></a>
+      <a class="entry-link" aria-label="{{ i18n "ariaPostLink" }} {{ $p.Title | plainify }}" href="{{ $p.Permalink }}"></a>
     </article>
     {{- end }}
   </main>
@@ -91,7 +91,7 @@
     <section class="ill-widget ill-widget-quote">
       <div class="ill-quote-viewport">
         {{/* הסט מרונדר פעמיים כדי שהאנימציה תתלפף בלי קפיצה */}}
-        <ul class="ill-quote-track" aria-label="ציטוטים נבחרים">
+        <ul class="ill-quote-track" aria-label="{{ i18n "ariaQuotes" }}">
           {{- range $pass := (seq 2) }}
           {{- range $quotes }}
           <li><blockquote{{ if eq $pass 2 }} aria-hidden="true"{{ end }}>

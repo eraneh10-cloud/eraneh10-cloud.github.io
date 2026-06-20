@@ -1,5 +1,5 @@
 {{- define "main" }}
 <section class="ill-404">
-  <p class="ill-404-text">הדף הזה לא קיים – אבל השאלות כן. חזרה ל<a href="{{ "/" | relLangURL }}">דף הבית</a>.</p>
+  <p class="ill-404-text">{{ i18n "err404Before" }}<a href="{{ "/" | relLangURL }}">{{ i18n "err404Home" }}</a>{{ i18n "err404After" }}</p>
 </section>
 {{- end }}
