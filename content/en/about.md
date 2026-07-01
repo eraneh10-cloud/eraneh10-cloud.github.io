@@ -7,7 +7,7 @@ summary: "About Illuminism – rational philosophy, translated from Hebrew"
 
 Illuminism is a Hebrew-language philosophy page that explores the great questions of existence through rational philosophy: What is matter? What is consciousness? What is time? Why can reality be formulated mathematically at all? Why is there life rather than "nothing"? And is it possible to build a single framework that connects them – without retreating into faith, and without settling for an external description alone?
 
-Illuminism makes accessible a philosophical approach called Ontological Mathematics, centered on a challenging claim: reason, and mathematics above all, is not merely a tool that describes reality – it is reality itself.
+Illuminism makes accessible a philosophical approach called Ontological Mathematics, centered on a challenging claim: reason, and mathematics above all, is not a tool that describes reality – it is reality itself.
 
 No background in mathematics is required – the arguments are presented in words, not formulas.
 
@@ -17,11 +17,15 @@ The aim is one: to build, step by step and through ordered thought, the complete
 
 ---
 
-## Discussion
+## How to Read This
 
-To see the full picture, it is best to begin with the pinned post and read in order. Questions, criticism, and objections are welcome. Challenge every claim as much as you like – the arguments, not the people. A sincere question receives the most considered answer here, though it is worth checking first whether it has already been answered in an earlier post. The only condition is respect: insults, personal attacks, spam, and commercial links will be deleted. The page will advance step by step, and each post reveals a small piece of a broader framework of thought that is being built gradually. Some things may sound strange at first – and that is fine; new ideas almost always sound strange, especially when the full picture has not yet been built. The only request is this: do not believe too quickly, and do not dismiss too quickly. Read slowly. Doubt. Test whether the argument holds. And be prepared to take an idea to its logical conclusion.
+To see the full picture, it is best to begin with the first post and read in order: each post lays down a concept, argument, or question that the next one continues, and the full picture is built gradually. Alongside philosophy, mathematics, and science, this page will also draw on psychology, history, and at times cinema or dreams – and even a topic that seems unrelated at first will later prove part of the same question. An idea that seems strange at first will grow clearer later, and a claim that sounds extreme will receive its balancing perspective further on. The same ideas will recur along the way, each time from a slightly different angle and at greater depth – like a spiral that deepens inward with every turn.
 
-For contact, questions, and sharing: [illuminism10@gmail.com](mailto:illuminism10@gmail.com)
+The only tool you will need is reason.
+
+Read slowly, test whether the move holds, and do not believe too quickly – but do not dismiss too quickly either. Some of this is demanding, and not every step will be spelled out in full; that difficulty is a mark of respect for your intelligence, not an obstacle.
+
+For contact and questions: [illuminism10@gmail.com](mailto:illuminism10@gmail.com)
 
 ## Disclaimer
 

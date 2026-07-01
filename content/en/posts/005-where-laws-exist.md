@@ -1,7 +1,7 @@
 ---
 title: "Where Is the Law of Gravity?"
 date: 2026-06-19
-draft: false
+draft: true
 weight: 5
 tags: ["Laws of Nature", "Materialism", "Ontological Mathematics"]
 summary: "Every atom obeys the law of gravity; no atom contains it. Where do the laws of physics exist?"

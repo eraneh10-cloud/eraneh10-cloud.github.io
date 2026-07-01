@@ -1,7 +1,7 @@
 ---
 title: "Two Ways to Truth"
 date: 2026-06-15
-draft: false
+draft: true
 weight: 3
 tags: ["Knowledge", "Induction", "Rationalism"]
 summary: "If you have seen a hundred white swans, do you know they are all white? On empiricism, rationalism, and two ways to truth."

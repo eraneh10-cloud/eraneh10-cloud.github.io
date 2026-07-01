@@ -1,7 +1,7 @@
 ---
 title: "Mathematics: Discovered, Not Invented"
 date: 2026-06-17
-draft: false
+draft: true
 weight: 4
 tags: ["Mathematics", "Discovery", "Platonism"]
 summary: "Can you cut a key for a lock whose existence no one yet knows? On mathematics as discovery, not invention."

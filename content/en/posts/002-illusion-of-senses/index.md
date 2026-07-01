@@ -1,6 +1,6 @@
 ---
 title: "The Illusion of the Senses"
-date: 2026-06-13
+date: 2026-07-01
 draft: false
 weight: 2
 summary: "The blue of the sky is not in the sky. It is in your head."

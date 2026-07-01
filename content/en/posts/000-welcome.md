@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-date: 2026-06-13
+date: 2026-07-01
 draft: false
 weight: 1
 tags: ["Introduction", "Ontological Mathematics", "Illuminism"]
